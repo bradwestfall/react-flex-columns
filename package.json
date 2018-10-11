@@ -1,0 +1,43 @@
+{
+  "name": "react-flex-columns",
+  "version": "0.1.0",
+  "description": "Easy layout columns for React",
+  "author": "Brad Westfall",
+  "license": "MIT",
+  "main": "build/Columns.js",
+  "repository": {
+    "url": "https://github.com/bradwestfall/react-flex-columns.git"
+  },
+  "keywords": [
+    "react",
+    "columns",
+    "layout",
+    "flexbox"
+  ],
+  "scripts": {
+    "prepare": "npm run build",
+    "example": "webpack-dev-server --config webpack.config.js",
+    "build": "npm run clean build && babel src/lib --out-dir build",
+    "clean": "rimraf build"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "classnames": "^2.2.6",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  }
+}

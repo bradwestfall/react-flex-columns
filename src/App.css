@@ -1,0 +1,7 @@
+.react-flex-columns {
+  background-color: #aaa;
+}
+
+.react-flex-columns > * {
+  background-color: rgba(0, 0, 255, 0.3);
+}
