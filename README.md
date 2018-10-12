@@ -28,7 +28,7 @@ const App = () => (
 
 ## Examples
 
-See the Codesandbox for an interactive example
+[See the Codesandbox](https://codesandbox.io/s/q82o4m511j) for an interactive example
 
 ![Example Image](docs/example.png)
 
