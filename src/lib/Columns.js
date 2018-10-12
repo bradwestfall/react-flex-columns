@@ -37,17 +37,17 @@ const Columns = ({ children, className, middle, gutterSize, gutters, split, reve
     'react-flex-columns-reverse': !!reverse
   })
 
-  // // If we're using the responsive settings
-  // if (stackMaxWidth) {
-  //   return (
-  //     <Media query={`(max-width: ${stackMaxWidth})`}>
-  //       {stack => {
-  //         if (stack) return <Fragment>{children}</Fragment>
-  //         return <div className={classNames}>{children}</div>
-  //       }}
-  //     </Media>
-  //   )
-  // }
+  // If we're using the responsive settings
+  if (stackMaxWidth) {
+    return (
+      <Media query={`(max-width: ${stackMaxWidth})`}>
+        {stack => {
+          if (stack) return <Fragment>{children}</Fragment>
+          return <div className={classNames} style={styles}>{children}</div>
+        }}
+      </Media>
+    )
+  }
 
   return <div className={classNames} style={styles}>{children}</div>
 }
