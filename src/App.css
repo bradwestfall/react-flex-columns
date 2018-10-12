@@ -1,7 +1,12 @@
+body {
+  padding: 3em 7em;
+  font-family: Arial;
+}
+
 .react-flex-columns {
-  background-color: #aaa;
+  background-color: #ccc;
 }
 
 .react-flex-columns > * {
-  background-color: rgba(0, 0, 255, 0.3);
+  background: linear-gradient(to right, #d82164, #9a0b3f)
 }
