@@ -34,7 +34,11 @@ const App = () => (
 
 ## Why
 
-Chances are your App's main layout is sophisticated and requires custom styles. This module is not trying to replace that. Also, chances are you have "UI Components" that are re-usable throughout your application like buttons and pagination. Often times you'll need to arrange those components side-by-side with each other. Perhaps at the bottom of some search results you want a "Add New Thing" button on the left, and to its right you want some pagination. This is "Micro-layout". Solving this side-by-sideness shouldn't require custom stylings. Sure making your own flexbox situation for this is easy, but why do the same repetitive micro-layout styling dozens of times. This is why I made this module.
+Chances are your App's main layout is sophisticated and requires custom styles. This module is not trying to replace that. Also, chances are you have "UI Components" that are re-usable throughout your application like buttons and pagination. Often times you'll need to arrange those components side-by-side with each other. Perhaps at the bottom of some search results you want a "Add New Thing" button on the left, and to its right you want some pagination.
+
+![Example of side-by-side components](docs/footer.png)
+
+Writing custom styles for side-by-sideness of components each time you need it is too repetitive and difficult to organize since these styles are not coupled to the components themselves, but also they're one-offs and are not apart of your big-picture layout styles also. I call these "micro layouts". Personally, I tend to write styles for components, and for the big layout, but when it comes to organizing components within the layout (with a micro layout), I'd prefer to not write custom styles. I'd rather use an abstraction like this module to "compose" these micro layouts.
 
 
 ## API
