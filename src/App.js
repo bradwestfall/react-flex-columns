@@ -7,7 +7,7 @@ const App = () => {
   return (
     <Fragment>
 
-      <Columns gutters middle>
+      <Columns gutters middle stackMaxWidth={800}>
         <Column size={10}>Gutters</Column>
         <Column flex>
           <h3>Middle</h3>

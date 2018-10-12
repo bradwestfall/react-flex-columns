@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import Media from 'react-media'
 import Column from './Column'
 
 export const componentTypeIsSame = (Component, type) => {
@@ -40,7 +41,7 @@ const Columns = ({ children, className, middle, gutterSize, gutters, split, reve
   // If we're using the responsive settings
   if (stackMaxWidth) {
     return (
-      <Media query={`(max-width: ${stackMaxWidth})`}>
+      <Media query={`(max-width: ${Number.isInteger(stackMaxWidth) ? `${stackMaxWidth}px` : stackMaxWidth})`}>
         {stack => {
           if (stack) return <Fragment>{children}</Fragment>
           return <div className={classNames} style={styles}>{children}</div>
@@ -67,7 +68,10 @@ Columns.propTypes = {
   gutters: PropTypes.bool,
   split: PropTypes.bool,
   reverse: PropTypes.bool,
-  stackMaxWidth: PropTypes.string
+  stackMaxWidth: PropTypes.oneOf([
+    PropTypes.string,
+    PropTypes.number
+  ])
 }
 
 export { Columns, Column }
