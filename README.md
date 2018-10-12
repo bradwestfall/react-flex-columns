@@ -38,7 +38,7 @@ Chances are your App's main layout is sophisticated and requires custom styles. 
 
 ![Example of side-by-side components](docs/footer.png)
 
-Writing custom styles for side-by-sideness of components each time you need it is too repetitive and difficult to organize since these styles are not coupled to the components themselves, but also they're one-offs and are not apart of your big-picture layout styles also. I call these "micro layouts". Personally, I tend to write styles for components, and for the big layout, but when it comes to organizing components within the layout (with a micro layout), I'd prefer to not write custom styles. I'd rather use an abstraction like this module to "compose" these micro layouts.
+Writing custom styling for these side-by-side situations each time you need them is too repetitive and difficult to organize since these styles are not coupled to the components themselves, and they're one-offs so they're not apart of your big-picture layout styles also. I call these "micro layouts". Personally, I tend to write styles for components, and for the big layout, but when it comes to organizing components within the layout (with a micro layout), I'd prefer to not write custom styles. I'd rather use an abstraction like this module to "compose" these micro layouts.
 
 
 ## API
