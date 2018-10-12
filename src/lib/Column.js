@@ -2,8 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-export const Column = ({ children, className, gutterUnit, stack, split, size, flex, display, align }) => {
-  if (!display) return null
+export const Column = ({ children, className, gutterUnit, stack, split, size, flex, align }) => {
   // When stack is enabled, we don't return traces of the columns div tags
   if (stack) return <Fragment>{children}</Fragment>
 
@@ -42,7 +41,6 @@ Column.propTypes = {
   split: PropTypes.bool,
   size: PropTypes.number,
   flex: PropTypes.bool,
-  display: PropTypes.bool,
   align: PropTypes.oneOf(['left', 'right', 'center'])
 }
 

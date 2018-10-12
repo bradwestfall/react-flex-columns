@@ -63,11 +63,13 @@ Columns.defaultProps = {
 }
 
 Columns.propTypes = {
+  className: PropTypes.string,
   middle: PropTypes.bool,
   gutterSize: PropTypes.number,
   gutters: PropTypes.bool,
   split: PropTypes.bool,
   reverse: PropTypes.bool,
+  stack: PropTypes.bool,
   stackMaxWidth: PropTypes.oneOf([
     PropTypes.string,
     PropTypes.number

@@ -32,6 +32,10 @@ See the Codesandbox for an interactive example
 
 ![Example Image](docs/example.png)
 
+## Why
+
+Chances are your App's main layout is sophisticated and requires custom styles. This module is not trying to replace that. Also, chances are you also have "UI Components" that are re-usable throughout your application like buttons and pagination (for example). Often times you'll need to arrange those components side-by-side with each other, like at the bottom of some search results, perhaps you want a "Add New Thing" button on the left, and to its right you want some pagination. This is "Micro-layout". Solving this side-by-sideness shouldn't require custom stylings. Sure making your own flexbox situation for that is easy, but why do that same repetitive thing dozens of times. This is why I made this module.
+
 
 ## API
 
@@ -41,3 +45,29 @@ There are two React components exported as named exports:
 import { Columns, Column } from 'react-flex-columns'
 ```
 
+### `<Columns>`
+
+This will return a `div` with `display: flex`. Here are some props you can pass it for customization:
+
+Property | Type | Description
+----- | ----- | -----
+**className** | *string* | A class you want added to the flex container. Note that it will already come with `react-flex-columns` as a class incase you want to hook in for custom styling.
+**middle** | *boolean* | Sets `align-items: center` to adjust all flex items to be in the vertical middle. Defaults to `false`.
+**gutterSize** | *number* | Creates a gutter with CSS `em` units in the number provided.
+**gutters** | *number* | Short for `gutterSize={1}`
+**split** | *boolean* | Instead of stacking columns from left to right, split the columns so the right one is aligned to the right of the flex container. This effectively does `justify-content: space-between`. Defaults to `false`.
+**reverse** | *boolean* | Reverse the display ordering from what the DOM order. This effectively does `flex-direction: row-reverse`. Defaults to `false`.
+**stack** | *boolean* | This effectively turns off "flexbox columns" and goes into a vertical stack-mode. Note that in this case, only the contents of `<Column>` is returned. The `div` tags that would ordinarily be there for flexbox columns will not be returned in stack-mode. Defaults to `false`.
+**stackMaxWidth** | *string* or *number* | Sets Media Query rules (using [react-media](https://github.com/ReactTraining/react-media)) and forces `<Columns>` into stack-mode if `stackMaxWidth` is smaller than the value provided. Strings values should contain units ('30em' or '500px'), Number units will be in pixels.
+
+
+### `<Column>`
+
+This will return a `div` which is a flex-item. Here are some props you can pass it for customization:
+
+Property | Type | Description
+----- | ----- | -----
+**className** | *string* | A class you want added to the flex container. Note that it will already come with `react-flex-column` as a class incase you want to hook in for custom styling.
+**flex** | *boolean* | Use this when you want to set `flex: 1` styling. Defaults to `false`.
+**size** | *number* | As an alternative to `flex`, this sets a specific width using `em` units. Don't use this with `flex` on the same `<Column>`
+**align** | *['left', 'center', 'right']* | Sets `text-align` on the column. Not using this prop will set no `text-align` value which means the default is whatever your inherited styles are (probably left align).
