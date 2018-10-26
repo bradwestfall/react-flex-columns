@@ -23,7 +23,7 @@ const App = () => (
 )
 ```
 
-`<Columns>` creates a `div` with `display: flex`. The children `<Column>`'s must be the first level children of `<Columns>` and create `div`'s that are flex items. Flex items by default will be side-by-side with each other even though the divs are still block-level elements. As flex items, their width will be as wide as their contents unless other properties are provided like `flex: 1`. In the above example, providing a `flex` boolean property will create a `flex: 1` styling which in this case results in two 50% wide columns. [Learning more about Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) will help you use this Module.
+`<Columns>` creates a `div` with `display: flex`. The children `<Column>`'s must be the first level children of `<Columns>` and create `div`'s that are flex items. Flex items by default will be side-by-side with each other even though the divs are still block-level elements. As flex items, their width will be as wide as their contents unless other properties are provided like `flex: 1`. In the above example, providing a `flex` boolean property will create a `flex: 1` styling which in this case results in two 50% wide columns. [Learning more about Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) will help you use this module.
 
 
 ## Examples
