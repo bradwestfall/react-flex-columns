@@ -70,7 +70,7 @@ Columns.propTypes = {
   split: PropTypes.bool,
   reverse: PropTypes.bool,
   stack: PropTypes.bool,
-  stackMaxWidth: PropTypes.oneOf([
+  stackMaxWidth: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
   ])
