@@ -32,7 +32,7 @@ const App = () => (
 
 ![Example Image](docs/example.png)
 
-> Btw, why is the gray background color of `<Columns>` escaping the outer left and right bounds of the container? Because it's using negative margins to offset the columns needing gutters. Does it break your design? No. Practically all grid systems even the old ones that used floats do this strategy and it's very normal, you've probably just not seen the wrapper with a background color to notice. 
+> Btw, why is the gray background color of `<Columns>` escaping the outer left and right bounds of the container? Because it's using negative margins to offset the columns needing gutters. Does it break your design? No. Practically all grid systems, even the old ones that used floats, do this strategy and it's very normal, you've probably just not seen the wrapper with a background color to notice. 
 
 ## Why
 
