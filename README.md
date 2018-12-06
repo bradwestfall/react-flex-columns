@@ -32,6 +32,8 @@ const App = () => (
 
 ![Example Image](docs/example.png)
 
+> Btw, why is the gray background color of `<Columns>` escaping the outer left and right bounds of the container? Because it's using negative margins to offset the columns needing gutters. Does it break your design? No. Practically all grid systems even the old ones that used floats do this strategy and it's very normal, you've probably just not seen the wrapper with a background color to notice. 
+
 ## Why
 
 Chances are your App's main layout is sophisticated and requires custom styles. This module is not trying to replace that. Also, chances are you have "UI Components" that are re-usable throughout your application like buttons and pagination. Often times you'll need to arrange those components side-by-side with each other. Perhaps at the bottom of some search results you want a "Add New Thing" button on the left, and to its right you want some pagination.
