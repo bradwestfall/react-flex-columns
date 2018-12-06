@@ -42,7 +42,7 @@ Writing custom styling for these side-by-side situations each time you need them
 
 ## Responsive Design
 
-Either implement your own external responsive strategy and do `<Columns stack={youControlThisBoolean} >` when you want it to stack columns instead of organizing them side-by-side. Or pass `stackMaxWidth` prop (see below) and specify responsive rules you want the columns to adhere to -- (uses [react-media](https://github.com/ReactTraining/react-media) under the hood).
+Either implement your own external responsive strategy and do `<Columns stack={youControlThisBoolean}>` when you want it to stack columns instead of organizing them side-by-side. Or pass `stackMaxWidth` prop (see below) and specify responsive rules you want the columns to adhere to -- (uses [react-media](https://github.com/ReactTraining/react-media) under the hood).
 
 ## API
 
