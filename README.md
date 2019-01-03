@@ -1,6 +1,6 @@
 # React Flex Columns
 
-React Flex Columns is an abstraction on CSS Flexbox-style columns for add-hoc layout that are not complex enough to justify writing custom CSS.
+React Flex Columns is an abstraction on CSS Flexbox-style columns for add-hoc layout that are not complex enough to justify writing custom CSS (or CSS-in-JS).
 
 Inspired by https://philipwalton.github.io/solved-by-flexbox/demos/grids and https://css-tricks.com/dont-overthink-flexbox-grids
 
