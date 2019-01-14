@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import Media from 'react-media'
+import { css } from '@emotion/core'
 import Column from './Column'
 
 export const componentTypeIsSame = (Component, type) => {
@@ -9,7 +9,7 @@ export const componentTypeIsSame = (Component, type) => {
   return type === Component || type === <Component />.type
 }
 
-const Columns = ({ children, className, middle, gutterSize, gutters, split, reverse, stack, stackMaxWidth }) => {
+const Columns = ({ children, className, middle, gutterSize, gutters, split, reverse, stack, ...rest }) => {
   const gutterUnit = gutterSize || (gutters && 1)
 
   // Verify and augment children columns
@@ -22,15 +22,15 @@ const Columns = ({ children, className, middle, gutterSize, gutters, split, reve
   // When stack is enabled, we don't return traces of the columns div tags
   if (stack) return <Fragment>{children}</Fragment>
 
-  const styles = {
-    display: 'flex',
-    boxSizing: 'borderBox'
-  }
-  if (middle) styles.alignItems = 'center'
-  if (split) styles.justifyContent = 'space-between'
-  if (reverse) styles.flexDirection = 'row-reverse'
-  if (gutterUnit) styles.marginLeft = `${gutterUnit * -0.5}em`
-  if (gutterUnit) styles.marginRight = `${gutterUnit * -0.5}em`
+  const styles = css`
+    display: flex;
+    box-sizing: border-box;
+    ${middle && 'align-items: center;'}
+    ${split && 'justify-content: space-between;'}
+    ${reverse && 'flex-direction: row-reverse;'}
+    ${gutterUnit && 'margin-left: ' + gutterUnit * -0.5 + 'em;'}
+    ${gutterUnit && 'margin-right: ' + gutterUnit * -0.5 + 'em;'}
+  `
 
   const classNames = classnames('react-flex-columns', className, {
     'react-flex-columns-align-middle': !!middle,
@@ -38,19 +38,7 @@ const Columns = ({ children, className, middle, gutterSize, gutters, split, reve
     'react-flex-columns-reverse': !!reverse
   })
 
-  // If we're using the responsive settings
-  if (stackMaxWidth) {
-    return (
-      <Media query={`(max-width: ${Number.isInteger(stackMaxWidth) ? `${stackMaxWidth}px` : stackMaxWidth})`}>
-        {stack => {
-          if (stack) return <Fragment>{children}</Fragment>
-          return <div className={classNames} style={styles}>{children}</div>
-        }}
-      </Media>
-    )
-  }
-
-  return <div className={classNames} style={styles}>{children}</div>
+  return <div {...rest} className={classNames} css={styles}>{children}</div>
 }
 
 Columns.defaultProps = {
@@ -69,11 +57,7 @@ Columns.propTypes = {
   gutters: PropTypes.bool,
   split: PropTypes.bool,
   reverse: PropTypes.bool,
-  stack: PropTypes.bool,
-  stackMaxWidth: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ])
+  stack: PropTypes.bool
 }
 
 export { Columns, Column }
