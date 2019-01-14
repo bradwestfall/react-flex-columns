@@ -9,7 +9,7 @@ export const componentTypeIsSame = (Component, type) => {
   return type === Component || type === <Component />.type
 }
 
-const Columns = ({ children, className, middle, gutterSize, gutters, split, reverse, stack, ...rest }) => {
+const Columns = ({ children, className, middle, gutterSize, gutters, split, reverse, stack }) => {
   const gutterUnit = gutterSize || (gutters && 1)
 
   // Verify and augment children columns
@@ -38,7 +38,7 @@ const Columns = ({ children, className, middle, gutterSize, gutters, split, reve
     'react-flex-columns-reverse': !!reverse
   })
 
-  return <div {...rest} className={classNames} css={styles}>{children}</div>
+  return <div className={classNames} css={styles}>{children}</div>
 }
 
 Columns.defaultProps = {
