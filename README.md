@@ -1,6 +1,6 @@
 # React Flex Columns
 
-React Flex Columns is an abstraction on CSS Flexbox-style columns for add-hoc layout that are not complex enough to justify writing custom CSS.
+React Flex Columns is an abstraction on CSS Flexbox-style columns for add-hoc layout that are not complex enough to justify writing custom CSS (or CSS-in-JS).
 
 Inspired by https://philipwalton.github.io/solved-by-flexbox/demos/grids and https://css-tricks.com/dont-overthink-flexbox-grids
 
@@ -32,6 +32,8 @@ const App = () => (
 
 ![Example Image](docs/example.png)
 
+> Btw, why is the gray background color of `<Columns>` escaping the outer left and right bounds of the container? Because it's using negative margins to offset the columns needing gutters. Does it break your design? No. Practically all grid systems (even the old ones that used floats) do this strategy and it's very normal. You probably just didn't notice with other systems because you didn't put a background on the row itself. If you want to see more about this and other layout strategies, [I have a video](https://www.youtube.com/watch?v=Mvg7WHV5oYE) from a talk I did.
+
 ## Why
 
 Chances are your App's main layout is sophisticated and requires custom styles. This module is not trying to replace that. Also, chances are you have "UI Components" that are re-usable throughout your application like buttons and pagination. Often times you'll need to arrange those components side-by-side with each other. Perhaps at the bottom of some search results you want a "Add New Thing" button on the left, and to its right you want some pagination.
@@ -40,6 +42,9 @@ Chances are your App's main layout is sophisticated and requires custom styles. 
 
 Writing custom styling for these side-by-side situations each time you need them is too repetitive and difficult to organize since these styles are not coupled to the components themselves, and they're one-offs so they're not apart of your big-picture layout styles also. I call these "micro layouts". Personally, I tend to write styles for components, and for the big layout, but when it comes to organizing components within the layout (with a micro layout), I'd prefer to not write custom styles. I'd rather use an abstraction like this module to "compose" these micro layouts.
 
+## Responsive Design
+
+Either implement your own external responsive strategy and do `<Columns stack={youControlThisBoolean}>` when you want it to stack columns instead of organizing them side-by-side. Or pass `stackMaxWidth` prop (see below) and specify responsive rules you want the columns to adhere to -- (uses [react-media](https://github.com/ReactTraining/react-media) under the hood).
 
 ## API
 
