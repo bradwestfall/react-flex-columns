@@ -1,6 +1,6 @@
 # React Flex Columns
 
-React Flex Columns is an abstraction on CSS Flexbox-style columns for add-hoc layout that are not complex enough to justify writing custom CSS (or CSS-in-JS).
+Writing Custom CSS rules (or CSS-in-JS rules) just for a little flexboxing side-by-side-ness can be a pain. Sure, it doesn't take a lot of CSS to do, but soon you'll be dealing with gutters and centering a responsive stuff. I use React Flex Columns as an abstraction on CSS Flexbox-style columns for add-hoc layout that are not complex enough to justify writing custom CSS rules. This tool is great for a lot of simple use cases but it is not (and will never be) as flexable as the entire CSS Flexbox API. If you need something really custom, then that is a good reason to write your own CSS rules.
 
 Inspired by https://philipwalton.github.io/solved-by-flexbox/demos/grids and https://css-tricks.com/dont-overthink-flexbox-grids
 
@@ -67,7 +67,7 @@ Property | Type | Description
 **split** | *boolean* | Instead of stacking columns from left to right, split the columns so the right one is aligned to the right of the flex container. This effectively does `justify-content: space-between`. Defaults to `false`.
 **reverse** | *boolean* | Reverse the display ordering from what the DOM order. This effectively does `flex-direction: row-reverse`. Defaults to `false`.
 **stack** | *boolean* | This effectively turns off "flexbox columns" and goes into a vertical stack-mode. Note that in this case, only the contents of `<Column>` is returned. The `div` tags that would ordinarily be there for flexbox columns will not be returned in stack-mode. Defaults to `false`.
-**stackMaxWidth** | *string* or *number* | Sets Media Query rules (using [react-media](https://github.com/ReactTraining/react-media)) and forces `<Columns>` into stack-mode if `stackMaxWidth` is smaller than the value provided. Strings values should contain units ('30em' or '500px'), Number units will be in pixels.
+**stackMaxWidth** | *string* or *number* | **DEPRECIATED - This prop no longer exists as we are not using the React-Media dependency anymore. To replace this behavior, use something similar to React-Media as a parent to Columns and pass the `stack` prop in** Sets Media Query rules (using [react-media](https://github.com/ReactTraining/react-media)) and forces `<Columns>` into stack-mode if `stackMaxWidth` is smaller than the value provided. Strings values should contain units ('30em' or '500px'), Number units will be in pixels.
 
 
 ### `<Column>`
