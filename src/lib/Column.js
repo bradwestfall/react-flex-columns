@@ -14,7 +14,7 @@ export const Column = ({ children, className, gutterUnit, stack, split, size, fl
     ${gutterUnit && 'margin-right: ' + gutterUnit * 0.5 + 'em;'}
     ${size && !split && 'width: ' + size + 'em;'}
     ${flex && !split && 'flex: 1;'}
-    ${align && 'text-align: ' + align.toLowerCase()}
+    ${align && 'text-align: ' + align.toLowerCase() + ';'}
   `
 
   return (

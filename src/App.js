@@ -43,8 +43,8 @@ const App = () => {
         <Column flex>Second</Column>
         <Column flex>Third</Column>
       </Columns>
-
       <hr />
+      
       <Columns gutterSize={4}>
         <Column flex>First</Column>
         <Column flex>Second</Column>
@@ -72,20 +72,20 @@ const App = () => {
       <hr />
 
       <Columns gutters middle>
-        <Column size={10}>First</Column>
+        <Column size={10}>First<br /><br /><br /><br />First</Column>
         <Column flex><span>Second</span></Column>
       </Columns>
       <hr />
 
       <Columns gutters>
         <Column size={10}>First</Column>
-        <Column flex><span>Second</span></Column>
+        <Column flex align="right"><span>Second</span></Column>
       </Columns>
       <hr />
 
       <Columns stack>
         <Column size={10}>First</Column>
-        <Column flex>Second</Column>
+        <Column flex >Second</Column>
       </Columns>
       <hr />
 
