@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { css } from '@emotion/core'
 import classnames from 'classnames'
 
-export const Column = ({ children, className, gutterUnit, stack, split, size, flex, align }) => {
+export const Column = ({ children, as: Comp = 'div', className, gutterUnit, stack, split, size, flex, align }) => {
   // When stack is enabled, we don't return traces of the columns div tags
   if (stack) return <Fragment>{children}</Fragment>
 
@@ -18,12 +18,14 @@ export const Column = ({ children, className, gutterUnit, stack, split, size, fl
   `
 
   return (
-    <div css={styles} className={classnames('react-flex-column', className, {
-      [`react-flex-columns-align-${align}`]: !!align,
-      'react-flex-columns-flex': !!flex
-    })}>
+    <Comp
+      css={styles}
+      className={classnames('react-flex-column', className, {
+        [`react-flex-columns-align-${align}`]: !!align,
+        'react-flex-columns-flex': !!flex,
+      })}>
       {children}
-    </div>
+    </Comp>
   )
 }
 
@@ -41,7 +43,7 @@ Column.propTypes = {
   split: PropTypes.bool,
   size: PropTypes.number,
   flex: PropTypes.bool,
-  align: PropTypes.oneOf(['left', 'right', 'center'])
+  align: PropTypes.oneOf(['left', 'right', 'center']),
 }
 
 export default Column

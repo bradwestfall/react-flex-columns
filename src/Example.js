@@ -22,21 +22,22 @@ const global = css`
 const responsive = css`
   @media (max-width: 600px) {
     display: block;
-    .react-flex-column { width: auto; }
+    .react-flex-column {
+      width: auto;
+    }
   }
 `
 
-const App = () => {
+const Example = () => {
   return (
     <Fragment>
       <Global styles={global} />
       <p>
-        Gray and Pink styling added so we can see what's going on.
-        Also note that negative left and right margin on flex container is
-        a <a href="https://csswizardry.com/2011/08/building-better-grid-systems/">technique to help balance gutters</a> and
-        will not inadvertently mess with containers of &lt;Columns&gt;
+        Gray and Pink styling added so we can see what's going on. Also note that negative left and right margin on flex
+        container is a{' '}
+        <a href="https://csswizardry.com/2011/08/building-better-grid-systems/">technique to help balance gutters</a>{' '}
+        and will not inadvertently mess with containers of &lt;Columns&gt;
       </p>
-
 
       <Columns gutters>
         <Column flex>First</Column>
@@ -44,7 +45,14 @@ const App = () => {
         <Column flex>Third</Column>
       </Columns>
       <hr />
-      
+
+      <Columns gutters reverse>
+        <Column flex>First</Column>
+        <Column flex>Second</Column>
+        <Column flex>Third (reversed)</Column>
+      </Columns>
+      <hr />
+
       <Columns gutterSize={4}>
         <Column flex>First</Column>
         <Column flex>Second</Column>
@@ -72,25 +80,39 @@ const App = () => {
       <hr />
 
       <Columns gutters middle>
-        <Column size={10}>First<br /><br /><br /><br />First</Column>
-        <Column flex><span>Second</span></Column>
+        <Column size={10}>
+          First
+          <br />
+          <br />
+          <br />
+          <br />
+          (tall column)
+        </Column>
+        <Column flex>
+          <span>Second</span>
+        </Column>
       </Columns>
       <hr />
 
       <Columns gutters>
         <Column size={10}>First</Column>
-        <Column flex align="right"><span>Second</span></Column>
+        <Column flex align="right">
+          <span>Second</span>
+        </Column>
       </Columns>
       <hr />
 
       <Columns stack>
-        <Column size={10}>First</Column>
-        <Column flex >Second</Column>
+        <Column size={10}>
+          <div>First</div>
+        </Column>
+        <Column flex>
+          <div>Second - When "stack" is used, Columns just returns the children.</div>
+        </Column>
       </Columns>
       <hr />
-
     </Fragment>
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<Example />, document.getElementById('root'))

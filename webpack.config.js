@@ -1,14 +1,14 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpackDevServerConfig = require('./webpack.devserver.js')
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpackDevServerConfig = require("./webpack.devserver.js");
 
 module.exports = {
   devServer: webpackDevServerConfig,
-  devtool: 'source-map',
-  entry: './src/App.js',
+  devtool: "source-map",
+  entry: "./src/Example.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js"
   },
   module: {
     rules: [
@@ -16,12 +16,12 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: "babel-loader"
         }
       },
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
@@ -29,7 +29,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       // Path to HTML file
-      template: './public/index.html'
+      template: "./public/index.html"
     })
   ]
-}
+};
