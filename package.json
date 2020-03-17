@@ -1,6 +1,6 @@
 {
   "name": "react-flex-columns",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Easy layout columns for React - Using Flexbox under the hood.",
   "author": "Brad Westfall",
   "license": "MIT",
