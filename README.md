@@ -60,6 +60,7 @@ This will return a `div` with `display: flex`. Here are some props you can pass 
 
 Property | Type | Description
 ----- | ----- | -----
+**as** | *string* | The element you want, default's to `div`.
 **className** | *string* | A class you want added to the flex container. Note that it will already come with `react-flex-columns` as a class incase you want to hook in for custom styling.
 **middle** | *boolean* | Sets `align-items: center` to adjust all flex items to be in the vertical middle. Defaults to `false`.
 **gutterSize** | *number* | Creates a gutter with CSS `em` units in the number provided.
@@ -76,6 +77,7 @@ This will return a `div` which is a flex-item. Here are some props you can pass 
 
 Property | Type | Description
 ----- | ----- | -----
+**as** | *string* | The element you want, default's to `div`.
 **className** | *string* | A class you want added to the flex container. Note that it will already come with `react-flex-column` as a class incase you want to hook in for custom styling.
 **flex** | *boolean* | Use this when you want to set `flex: 1` styling. Defaults to `false`.
 **size** | *number* | As an alternative to `flex`, this sets a specific width using `em` units. Don't use this with `flex` on the same `<Column>`
