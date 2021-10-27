@@ -1,4 +1,5 @@
-\*\* No Longer Maintained \*\*
+# \*\* No Longer Maintained \*\*
+This project is no longer maintained
 
 # React Flex Columns
 
