@@ -1,3 +1,5 @@
+\*\* No Longer Maintained \*\*
+
 # React Flex Columns
 
 Writing Custom CSS rules (or CSS-in-JS rules) just for a little flexboxing side-by-side-ness can be a pain. Sure, it doesn't take a lot of CSS to do, but soon you'll be dealing with gutters and centering a responsive stuff. I use React Flex Columns as an abstraction on CSS Flexbox-style columns for add-hoc layout that are not complex enough to justify writing custom CSS rules. This tool is great for a lot of simple use cases but it is not (and will never be) as flexable as the entire CSS Flexbox API. If you need something really custom, then that is a good reason to write your own CSS rules.
